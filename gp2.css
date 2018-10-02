@@ -1,0 +1,63 @@
+#htmlbackground{
+    background: url("https://images.unsplash.com/photo-1530482817083-29ae4b92ff15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=44f4aebbd1e1371d5bf7dc22016c5d29&w=1000&q=80") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.a {
+    width: 50px;
+    height:50px;
+    /*background-color:white;*/
+    position:relative;
+    left: 225px;
+    top: 125px;
+    background-image: url("https://www.getdigital.eu/web/getdigital/gfx/products/__generated__resized/380x380/Aufkleber_Trollface.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 2;
+}
+
+.smallgame{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    margin: auto;
+}
+
+.timer{
+    position: fixed;
+    top: 300px;
+    left: 900px;
+    width: 50px;
+    text-align: right;
+    color:white;
+}
+
+.form{
+    visibility: hidden;
+    z-index: 4;
+}
+
+text{
+    color: white;
+}
+
+datalist{
+    margin: auto;
+}
+
+.selection{
+    margin: auto;
+    width: 14%;
+    margin-left: 43%;
+    margin-right: 43%;
+    
+}
+.level{
+    color: white;
+    margin: auto;
+}
