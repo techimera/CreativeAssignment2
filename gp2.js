@@ -54,7 +54,6 @@ function getlv(){
     }
     else{
         gamemode = true;
-        // reset_timer();
         curlevel = opt;
         switch (opt) {
             case "easy":
@@ -136,7 +135,9 @@ function gotit(){
             endtime = curtime/timeunit;
             alert("Do not think this is the end...");
         }
-        // records();
+        document.getElementById('a').style.visibility = "hidden";
+        records();
+        document.getElementById('a').style.visibility = "hidden";
         recording = false;
         gamemode = false;
         document.getElementById('level').value = "";
