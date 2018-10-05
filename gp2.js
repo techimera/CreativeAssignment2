@@ -3,10 +3,12 @@ var gamemode = false;
 var brutal = false;
 var recording = false;
 var padnum = 50;
-var original = "url('https://www.getdigital.eu/web/getdigital/gfx/products/__generated__resized/380x380/Aufkleber_Trollface.jpg')";
-var failedpicture = "url(http://k32.kn3.net/taringa/2/2/7/5/5/6/8/dark_angel666/1B2.jpg)";
+var original = "url('https://cdn4.iconfinder.com/data/icons/reaction/32/happy-512.png')";
+var failedpicture = "url('https://cdn4.iconfinder.com/data/icons/reaction/32/wink-512.png')";
 var laughing = new Audio("http://www.eletech.com/Products/Kiddie_Ride_Boards/HAHAHA.WAV");
 var no = new Audio("https://www.myinstants.com/media/sounds/nooo.mp3");
+var gotitpic1 = "url('https://cdn4.iconfinder.com/data/icons/reaction/32/angry-512.png')"
+var gotitpic2 = "url('https://cdn4.iconfinder.com/data/icons/reaction/32/dead-512.png')"
 var curlevel;
 
 //stop watch functions
@@ -55,6 +57,7 @@ function getlv(){
     else{
         gamemode = true;
         curlevel = opt;
+        $('.a').css('background-image', original);
         switch (opt) {
             case "easy":
                 // code
@@ -119,6 +122,7 @@ function gotit(){
     var endtime;
     if(gamemode == true){
         if (brutal == true){
+            $('.a').css('background-image', gotitpic2);
             laughing.pause();
             laughing.currentTime = 0;
             clearTimeout(failedpic);
@@ -129,15 +133,15 @@ function gotit(){
             brutal = false;
         }
         else{
+            $('.a').css('background-image', gotitpic1);
             laughing.pause();
             laughing.currentTime = 0;
             notimer();
             endtime = curtime/timeunit;
             alert("Do not think this is the end...");
         }
-        document.getElementById('a').style.visibility = "hidden";
-        records();
-        document.getElementById('a').style.visibility = "hidden";
+        // document.getElementById('a').style.visibility = "hidden";
+        // records();
         recording = false;
         gamemode = false;
         document.getElementById('level').value = "";
@@ -170,7 +174,7 @@ $('#submit').click(function(e) {
 function resetrecordform(){//for the case of switching mode without saving name and the time
     recording = false;
     document.getElementById('form').style.visibility = "hidden";
-    $('#name').val("");
+   // $('#name').val("");
 }
 
 
@@ -224,4 +228,52 @@ function sound(src) {
         this.sound.pause();
     }
 }
+
+$("#submitButton").click(function(e) {
+    var keyword = $("#searchField").val();
+    var mySearch = "https://api.themoviedb.org/3/search/movie?api_key=4e2457fc3f449ae1031bf4fe900dbd80&query=" + keyword + "&language=en-US&page=1&include_adult=false";
+    console.log(mySearch);
+    alert("wait");
+    $.ajax({
+        url: mySearch,
+        dataType: "json",
+        success: function(data){
+            alert("connected");
+            var title = '';
+            var overview = '';
+            var realeasedate = '';
+            var language = '';
+            // var runtime = '';
+            var defaultposter = 'http://image.tmdb.org/t/p/w185';
+            var movieList = "<ul>";
+            
+            for(var i=0; i < data.results.length; i++){
+                var curdata = data.results[i];
+                title = curdata.title;
+                overview = curdata.overview;
+                realeasedate = curdata.release_date;
+                language = curdata.original_language;
+                // runtime = curdata.
+                var poster = defaultposter + curdata.poster_path;
+                console.log(poster);
+                movieList += "<li><div id='moviecontainer'><div id='picture'><img src='" + poster + "'></div>" +
+                "<div id='moviedescription'>"+
+                "<text>title: "+ title +"</br></text>" +
+                "<text>released: "+ realeasedate +"<br></text>" +
+                "<text>language: "+ language +"<br></text>" +
+                "<text>overview: "+ overview +"</br></text>" +
+                "</div>"+
+                "</div>"+
+                "</li>";
+            }
+            movieList += "</ul>";
+            console.log(movieList);
+            alert("connection ends");
+            $("#answers").html(movieList);
+            // 
+        }
+    });
+    e.preventDefault();
+    document.getElementById('gamingArea').style.visibility = "hidden";
+});
 

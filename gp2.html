@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html id="htmlbackground">
-    
-    <head>
-        
-        <link  rel="stylesheet" type="text/css" href="gp2.css">
-        
-    </head>
-        
-    <body>
-        
-        <div></br></div>
-        
-        <div class = 'smallgame' onclick = "missed()">
-            <div class='a' id = "a" onclick = "gotit()"> </div>
-            <span class= 'timer' id = "timer">0.0</span>
-            <form class= 'form', id= "form"> 
-                Your Name: <input id ="name" type="text",name= "name" value= ""></input> <input id = "submit" type="submit", value="Submit">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="gp2.css">
+
+</head>
+
+<body>
+
+    <div id='titleformat'>
+        <div id='titleimage'>
+            <img id='searchengine' src='https://www.themoviedb.org/assets/1/v4/logos/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png'>
+        </div>
+        <div id='searchingformat'>
+            <form color="white">
+                <text>Search for movie:</text> <input type="text" id="searchField" value="">
+                <input id='submitButton' type="submit" value="Submit">
             </form>
         </div>
-        
-        <div class ='selection'> 
-            <text>Choose your level: <text>
+    </div>
+
+    <div id="answers"></div>
+
+    <div>
+        </br>
+    </div>
+    <div id='gamingArea'>
+    <div id='misc'><text>chasing imoge!!!</text></div>
+    <div class='smallgame' onclick="missed()">
+        <div class='a' id='a' onclick="gotit()"> </div>
+        <span class= 'timer' id = "timer">0.0</span>
+        <form class='form' , id="form">
+            Your Name: <input id="name" type="text" ,name="name" value=""></input> <input id="submit" type="submit" , value="Submit">
+        </form>
+    </div>
+
+    <div class='selection'>
+        <text>Choose your level: <text>
             <select id = "level" onchange ='getlv()'>
                 <option value="">none
                 <option value="easy">easy
@@ -28,13 +45,26 @@
                 <option value="hard">hard
                 <option value="brutal">brutal
             </select>
-        
-        
-        <div id = "ttt" color = white> <text>this is where the magic occur<text> <div>
-        
-        
+        </div>
+        </div>
+        <!--</div>-->
+        <!--<ul>-->
+        <!--<li>-->
+            <!--<div id='moviecontainer'>-->
+            <!--    <div id='picture'>-->
+            <!--        <img src='http://image.tmdb.org/t/p/w185/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg'>-->
+            <!--    </div>-->
+            <!--    <div id='moviedescription'>-->
+            <!--        <text>title: Star Wars</br></text><text>released: 1977-05-25<br></text><text>language: en<br></text><text>overview: Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.</br></text>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src = "gp2.js"></script>
-        
-    </body>
+        <script type="text/javascript" src="gp2.js"></script>
+
+</body>
+
 </html>

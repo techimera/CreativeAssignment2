@@ -13,7 +13,7 @@
     position:relative;
     left: 225px;
     top: 125px;
-    background-image: url("https://www.getdigital.eu/web/getdigital/gfx/products/__generated__resized/380x380/Aufkleber_Trollface.jpg");
+    background-image: url("https://cdn4.iconfinder.com/data/icons/reaction/32/happy-512.png");
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: 2;
@@ -24,13 +24,14 @@
     margin-right: 25%;
     width: 500px;
     height: 300px;
-    background-color: white;
+    /*background-color: white;*/
+    background-image: url("http://buysellgraphic.com/images/graphic_preview/large/simple_cartoon_cloud_and_star_background_23630.jpg");
     margin: auto;
 }
 
 .timer{
     position: fixed;
-    top: 300px;
+    top: 580px;
     left: 900px;
     width: 50px;
     text-align: right;
@@ -60,4 +61,55 @@ datalist{
 .level{
     color: white;
     margin: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+/*go left*/
+#picture{
+   width: 190px;
+   height: 275px;
+   float: left;
+   margin: 2.5px;
+}
+/*go right*/
+#moviedescription{
+    width: 500px;
+    height: 180px;
+    float:left;
+    position: relative;
+    top:2.5%;
+    left:5%;
+}
+
+#moviecontainer{
+    width: 800px;
+    height: 283px;
+    /*background: gray;*/
+    margin: 2.5px;
+}
+
+#misc{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 20px;
+}
+
+#titleformat{
+    margin: center;
+    width: 400px;
+    height: 250px;
+    padding-left: 36%;
+}
+
+#searchingformat{
+    padding-top:20px;
+    padding-left: 40px;
+}
+
+ul{
+    margin-left:20%;
 }
