@@ -233,12 +233,12 @@ $("#submitButton").click(function(e) {
     var keyword = $("#searchField").val();
     var mySearch = "https://api.themoviedb.org/3/search/movie?api_key=4e2457fc3f449ae1031bf4fe900dbd80&query=" + keyword + "&language=en-US&page=1&include_adult=false";
     console.log(mySearch);
-    alert("wait");
+    // alert("wait");
     $.ajax({
         url: mySearch,
         dataType: "json",
         success: function(data){
-            alert("connected");
+            // alert("connected");
             var title = '';
             var overview = '';
             var realeasedate = '';
@@ -268,7 +268,7 @@ $("#submitButton").click(function(e) {
             }
             movieList += "</ul>";
             console.log(movieList);
-            alert("connection ends");
+            // alert("connection ends");
             $("#answers").html(movieList);
             // 
         }
